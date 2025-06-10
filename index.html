@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Mutungo Islamic School</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+  <!-- Replace this outdated link in your <head> -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f9f9f9;
+      color: #222;
+    }
+
+    /* Main Header */
+    .main-header {
+      background-color: #fff;
+      color: #006400;
+      padding: 1rem 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+
+    .logo img {
+      height: 55px;
+      margin-right: 1rem;
+    }
+
+    .main-header h1 {
+      font-size: 1.8rem;
+      flex-grow: 1;
+      margin: 0;
+    }
+
+    .header-cta {
+      display: flex;
+      gap: 1rem;
+    }
+
+    .header-cta a {
+      background-color: #a0d468;
+      color: #004d00;
+      font-weight: 700;
+      padding: 0.5rem 1rem;
+      border-radius: 4px;
+      text-decoration: none;
+      transition: background-color 0.3s ease;
+    }
+
+    .header-cta a:hover {
+      background-color: #8bc34a;
+      color: #003300;
+    }
+
+    nav {
+      background-color: #2e8b57;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 1.2rem;
+      padding: 0.8rem 1rem;
+    }
+
+    nav a {
+      color: white;
+      font-weight: 600;
+      text-decoration: none;
+      padding: 0.5rem 1rem;
+      border-radius: 4px;
+      transition: background 0.3s ease;
+    }
+
+    nav a:hover {
+      background-color: #246b45;
+    }
+
+    .hero {
+      position: relative;
+      background: url('hero.jpg') center/cover no-repeat;
+      color: white;
+      text-align: center;
+      padding: 5rem 1rem;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background-color: rgba(0, 0, 0, 0.55);
+      z-index: 1;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 800px;
+      margin: auto;
+    }
+
+    .hero h2 {
+      font-size: 2.8rem;
+      margin-bottom: 1rem;
+      font-weight: 700;
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      line-height: 1.6;
+    }
+
+    .content-section {
+      max-width: 1100px;
+      margin: 3rem auto;
+      padding: 0 1rem;
+    }
+
+    .section-title {
+      text-align: center;
+      font-size: 1.8rem;
+      margin-bottom: 1rem;
+      color: #006400;
+    }
+
+    .mission, .vision {
+      background: white;
+      border-left: 5px solid #006400;
+      padding: 1.5rem;
+      margin-bottom: 2rem;
+      border-radius: 8px;
+      box-shadow: 0 1px 5px rgba(0,0,0,0.05);
+    }
+
+    .info-grid {
+      display: grid;
+      gap: 1.5rem;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    }
+
+    .info-card {
+      background: white;
+      padding: 1.3rem;
+      border-radius: 8px;
+      box-shadow: 0 1px 6px rgba(0,0,0,0.08);
+      transition: transform 0.3s ease;
+    }
+
+    .info-card:hover {
+      transform: translateY(-4px);
+    }
+
+    .calendar ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .calendar li {
+      margin-bottom: 0.8rem;
+      padding-left: 1.2rem;
+      position: relative;
+    }
+
+    .calendar li::before {
+      content: "📅";
+      position: absolute;
+      left: 0;
+    }
+
+    footer {
+      background-color: #2e8b57;
+      color: white;
+      padding: 2rem 1rem 1rem;
+    }
+
+    .footer-content {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      justify-content: space-between;
+      max-width: 1100px;
+      margin: auto;
+    }
+
+    .footer-section {
+      flex: 1 1 250px;
+    }
+
+    .footer-section h4 {
+      margin-bottom: 0.5rem;
+      font-size: 1.1rem;
+      padding-bottom: 0.3rem;
+    }
+
+    .footer-section p, .footer-section a {
+      font-size: 0.95rem;
+      color: #fff;
+      text-decoration: none;
+      margin: 0.3rem 0;
+    }
+
+    .footer-section a:hover {
+      text-decoration: underline;
+    }
+
+    .footer-social {
+      text-align: center;
+      margin-top: 1rem;
+    }
+
+    .footer-social a {
+      color: #cdeac0;
+      margin: 0 0.7rem;
+      font-size: 1.3rem;
+      transition: color 0.3s ease;
+    }
+
+    .footer-social a:hover {
+      color: #a0d468;
+    }
+
+    .footer-divider {
+      height: 1px;
+      background: rgba(255,255,255,0.3);
+      margin: 1.5rem auto;
+      max-width: 1100px;
+    }
+
+    .footer-bottom {
+      text-align: center;
+      font-size: 0.85rem;
+      color: #eee;
+    }
+
+    @media (max-width: 600px) {
+      .main-header {
+        flex-direction: column;
+        text-align: center;
+        gap: 1rem;
+      }
+
+      nav {
+        flex-direction: column;
+      }
+
+      .footer-content {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="main-header">
+      <div class="logo">
+        <img src="/images/ones.png" alt="School Logo" />
+      </div>
+      <h1>Mutungo Islamic School</h1>
+      <div class="header-cta">
+        <a href="#">Apply Now</a>
+        <a href="#">Contact Us</a>
+      </div>
+    </div>
+  </header>
+
+  <nav>
+    <a href="#">Home</a>
+    <a href="#">About</a>
+    <a href="#">Academics</a>
+    <a href="#">Admissions</a>
+    <a href="#">News</a>
+    <a href="#">Contact</a>
+  </nav>
+
+  <section class="hero">
+    <div class="hero-content">
+      <h2>Welcome to Mutungo Islamic School</h2>
+      <p>Excellence in Islamic and formal education — nurturing minds, hearts, and future leaders.</p>
+    </div>
+  </section>
+
+  <section class="content-section" style="display: flex; flex-wrap: wrap; gap: 2rem; align-items: center;">
+    <div style="flex: 1 1 300px;">
+      <h3 class="section-title">Who We Are</h3>
+      <p>
+        Mutungo Islamic School is a faith-based institution committed to academic excellence and moral development. We blend national curriculum with Islamic teachings to develop well-rounded individuals prepared to lead with integrity and purpose.
+      </p>
+      <a href="#" style="display: inline-block; margin-top: 1rem; background-color: #006400; color: white; padding: 0.6rem 1.2rem; border-radius: 4px; text-decoration: none; font-weight: 600;">
+        Learn More About Us →
+      </a>
+    </div>
+    <div style="flex: 1 1 300px;">
+      <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 8px; box-shadow: 0 2px 6px rgba(0,0,0,0.15);">
+        <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="School Intro Video" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" frameborder="0" allowfullscreen></iframe>
+      </div>
+    </div>
+  </section>
+
+  <section class="content-section">
+    <div class="mission">
+      <h3 class="section-title">Our Mission</h3>
+      <p>To provide holistic education based on Islamic values, nurturing students spiritually, morally, intellectually, and socially for a better tomorrow.</p>
+    </div>
+
+    <div class="vision">
+      <h3 class="section-title">Our Vision</h3>
+      <p>To be a model Islamic educational institution that produces God-fearing, responsible, and productive citizens.</p>
+    </div>
+
+    <div class="info-grid">
+      <div class="info-card">
+        <h4>Head Teacher's Message</h4>
+        <p>We believe in nurturing learners through academic excellence, discipline, and spiritual guidance. Welcome to a community of growth and purpose.</p>
+      </div>
+
+      <div class="info-card calendar">
+        <h4>Upcoming Events</h4>
+        <ul>
+          <li>Mid-Term Exams – June 15</li>
+          <li>Parents' Meeting – June 28</li>
+          <li>Visiting Day – July 12</li>
+        </ul>
+      </div>
+
+      <div class="info-card">
+        <h4>Latest News</h4>
+        <p>Our school emerged among the top performers in the district. We have also introduced a new digital library for all learners.</p>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-content">
+      <div class="footer-section">
+        <h4>Contact Us</h4>
+        <p>📍 Mutungo Hill, Kampala, Uganda</p>
+        <p>📞 +256 700 123456</p>
+        <p>✉️ info@mutungoislamic.ac.ug</p>
+      </div>
+      <div class="footer-section">
+        <h4>Quick Links</h4>
+        <p><a href="#">Admissions</a></p>
+        <p><a href="#">Academics</a></p>
+        <p><a href="#">News & Events</a></p>
+      </div>
+      <div class="footer-section">
+        <h4>About</h4>
+        <p>Mutungo Islamic School<br>Faith. Knowledge. Integrity.</p>
+      </div>
+
+    <div class="footer-social">
+      <a href="#"><i class="fab fa-facebook-f"></i></a>
+      <a href="#"><i class="fab fa-twitter"></i></a>
+      <a href="#"><i class="fab fa-instagram"></i></a>
+    </div>
+    </div>
+
+    <div class="footer-divider"></div>
+
+    <div class="footer-bottom">
+      &copy; 2025 Mutungo Islamic School. All rights reserved. | Built by Bree Technologies.
+    </div>
+  </footer>
+
+</body>
+</html>
